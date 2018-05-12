@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Building an AI product</title>
+		<title>Playing With Pandas</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -25,282 +25,82 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-                    <div style="font-size: 2.8em"> Building an <br><font color="#f03"><span style="font-size:1.3em">AI</span></font> Product</div>
+                    <div style="font-size: 2.8em"> Playing with <br><font color="#f03"><span style="font-size:1.3em">Pandas</span></font> </div>
                     <div>
-                    <span style="font-size: 0.6em;"><font color="#fff">Bijay Gurung / <i>@MyBgDays</i></font></span> <br>
-                    <span style="font-size: 0.6em;"><font color="#fff">Mahendra Singh Thapa / <i>@thapaji_27</i></font></span>
+                    <span style="font-size: 0.6em;"><font color="#fff">Bijay Gurung / <i>@bglearning</i></font></span> <br>
                     </div>
-                    <p style="font-size: 0.5em;"> Facebook DevC Kathmandu Meetup, July, 2017<p>
-                </section>
-
-                <section>
-						<img width="500" style="float:left;" src="image/fm.png">
-                        <p style="font-size:1.2em; text-align:right;">WE </p>
-                        <p style="font-size:1.2em; text-align:right;">BUILD</p>
-                        <p style="font-size:1.6em; text-align:right;"><font color="#f03">AI</font></p>
-                        <p style="font-size:1.2em; text-align:right;"><font color="#f03">SOLUTIONS</font></p>
-                        <p style="font-size:1.2em; text-align:right;">FOR</p>
-                        <p style="font-size:1.2em; text-align:right;">SALES</p>
                 </section>
 
                 <section>
                     <h2>Outline</h2>
                     <ul>
-                        <li>What is AI?</li>
-                        <li>Building an AI product <span style="font-size: 0.8em">(Process and Challenges)</span></li>
-                        <li>AI scene in Nepal</li>
-                        <li>Getting Started</li>
+                        <li>Overview of ML Pipeline</li>
+                        <li>Where pandas fits in</li>
+                        <li>Data Structures in pandas</li>
+                        <li>Exploring a Dataset: Titanic</li>
                     </ul>
                 </section>
 
                 <section>
-                    <p style="font-size:2.0em"> What &nbsp;is <font color="#f03">&nbsp;AI</font>? </p>
-                </section>
-
-                <section>
-                    <p class="fragment" style="font-size:1.6em"> Science of building</p>
-                    <p style="font-size:2.0em"> <font color="#f03">Intelligent</font> Machines</p>
-                </section>
-                <section>
-                    <p style="font-size:2.0em"> <font color="#f03">Intelligence</font> is ambiguous</p>
-                </section>
-
-                <section>
-                    <h2> Types of AI</h2>
+                    <h2>Machine Learning Pipeline</h2>
                     <ul style="font-size:1.2em">
-                        <li> Narrow AI <span class="fragment" style="font-size: 0.6em;color:#32CD32">(Pretty Successful)</span></li>
-                        <li> General AI <span class="fragment" style="font-size: 0.6em;color:#ff0033">(Far away)</span></li>
-                        <li> Super AI <span class="fragment" style="font-size: 0.6em;color:#ff0033">(Far away)</span></li>
+                        <li class="fragment"> Define the problem</li>
+                        <li class="fragment"> Get the data</li>
+                        <li class="fragment"> Clean data and stuff</li>
+                        <li class="fragment"> Analyze the data</li>
+                        <li class="fragment"> Preprocess and prepare data</li>
+                        <li class="fragment"> Build appropriate models</li>
+                        <li class="fragment"> Evaluate and tune models</li>
+                        <li class="fragment"> Deploy and monitor</li>
                     </ul>
                 </section>
-
                 <section>
-                    <section>
-                        <h1>...</h1>
-                    </section>
-
-                    <p><span style="font-size: 1.5em"><span style="font-size:1.2em">AI</span>&nbsp; in our lives</span></p>
-
-                    <section>
-						<img height="450" src="image/GooglePhotos.png">
-                    </section>
-
-                    <section>
-						<img height="450" src="image/april.jpg">
-                    </section>
-
-                    <section>
-						<img height="450" src="image/YoutubeMusic.png">
-                    </section>
-
-                    <section>
-						<img height="450" src="image/YoutubeTalks.png">
-                    </section>
-                    <section>
-						<img height="450" src="image/prisma.jpg">
-                    </section>
-
-                    <section>
-                        <h1>AI无处不在</h1>
-                    </section>
-
-                    <section>
-						<img height="450" src="image/GoogleTranslate.png">
-                    </section>
-                    <section>
-						<img style="float:left;" width="400" src="image/medical.jpg">
-						<img width="400" src="image/cars.jpg">
-                    </section>
-                    <section>
-						<img height="450" src="image/not-hotdog.png">
-                    </section>
-                </section>
-
-                <section>
-                    <p style="font-size:2.0em;">"<font color="#f03">AI</font> is the new <font color="#D4AF37">Electricity</font>"</p>
-                    <p> ~Andrew Ng</p>
-                </section>
-
-                <section>
-                    <p style="font-size:3.5em"> <span style="font-size: 1.2em">AI</span> <br><i>REVOLUTION</i> </p>
-                </section>
-
-                <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-
-                    <section>
-                        <h1> Building an AI Product </h1>
-                    </section>
-        
-                    <section>
-                        <h2> Email classification </h2>
-                        <blockquote>
-                            <ul>
-                                <li><p> Spam </p></li>
-                                <li><p> Not Spam </p></li>
-                            </ul>
-                        </blockquote>
-
-                    </section>
-
-                    <section>
-                        <h2> 1) Data Collection</h2>
-                        <img src="image/data.png"></img>
-                    </section>
-
-                    <section>
-                        <h2> 2) Feature Extraction </h2>
-                        <img src ="image/feature.png"></img>
-                    </section>
-
-
-                    <section>
-                        <h2> 3) Algorithm </h2>
-                        <img src="image/algorithm.png"></img>
-                    </section>
-
-                    <section>
-                        <h2> 4) Validation </h2>
-                        <img src="image/validation.png"></img>
-                    </section>
-
-
-                    <section>
-                        <h2> 5) Feedback </h2>
-                        <img src="image/feedback.jpg"></img>
-                    </section>
-                </section>
-                <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-
-                    <section>
-                        <p> <span style="font-size:2.5em"> <i><font color="#223334">Challenges</font></span>&nbsp; in</i></p>
-                        <h1> Building an AI Product </h1>
-                    </section>
-
-                    <section>
-                        <h2>Getting the Data</h2>
-                        <img class="fragment" src="image/product-data.jpg"></img>
-                    </section>
-
-                    <section>
-                        <h4 style="font-size:1.2em"><i> Figuring out the <u>right</u> Algorithms and methods</i></h4>
-                        <img class ="fragment" src="image/map.png" height="520"></img>
-                    </section>
-
-                    <section>
-                        <h2>Making sure the Users love the product</h2>
-                    </section>
-                    <section>
-                        <h2>There's no definite way. Sometimes you gotta hack.</h2>
-                        <img src="image/pile.jpg"></img>
-                    </section>
-
-                </section>
-
-                <section data-background ="#dddddd"> 
-
-                    <section>
-                        <h1><font color="#f03"><span style="font-size:1.3em">AI</span></font> scene in Nepal</h1>
-                    </section>
-
-                    <section>
-                        <h2>Data is not enough</h2>
-                        <div class ="fragment">
-                            <p><font color="#4d7e65"> Nepali voice to text</font> </p>
-                            <img src="image/voice.png"></img>
-                        </div>
-                    </section>
-
-                    <section>
-                        <h2> Weak Foundation</h2>
-                        <img height="500" src="image/weak.jpg"></img>
-                    </section>
-
-                    <section>
-                        <h2> Scarcity of Mentors</h2>
-                        <img src="image/mentor.jpg" height ="500px"></img>
-                    </section>
-
-                    <section>
-                        <h2> No active AI community</h2>
-                        <img src="image/community.png" height ="500px"></img>
-                    </section>
-                </section>
-
-                <section>
-
-                    <section>
-                        <span style="font-size:5.0em"><font color="#d4af37"><strong> But </strong></font> </span>
-                    </section>
-
-                    <section>
-                        <h2> Proactive People </h2>
-                        <img src="image/proactive.jpg" height="500px"></img>
-                    </section>
-
-                    <section>
-                        <h1> You </br><span style="font-size:1.8em">don't </span> </br> need much to get started </h1>
-                    </section>
-
+                    <h2>Where pandas comes in</h2>
+                    <ul style="font-size:1.2em">
+                        <li> Define the problem</li>
+                        <li> Get the data</li> 
+                        <li> Clean data and stuff <span class="fragment"><font color="#f03">(Pandas)</font></span></li> 
+                        <li> Analyze the data <span class="fragment"><font color="#f03">(Pandas)</font></span></li>
+                        <li> Preprocess and prepare data <span class="fragment"><font color="#f03">(Pandas)</font></span></li>
+                        <li> Build appropriate models</li>
+                        <li> Evaluate and tune models</li>
+                        <li> Deploy and monitor</li>
+                    </ul>
                 </section>
 
 				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-
-                    <section>
-                        <h1> Getting started </h1>
-                    </section>
-
-                    <section>
-                        <h2> Start with the foundations </h2>
-                        <ul>
-                        <li class="fragment"> Linear Algebra </li>
-                        <li class="fragment"> Probability and Statistics </li>
-                        <li class="fragment"> Multivariate Calculus </li>
-                        <li class="fragment"> Numerical Optimization </li>
-                        <li class="fragment"> Algorithms </li>
-                        <li class="fragment"> Data Structures </li>
-                        <li class="fragment"> Programming </li>
-                    </section>
-
-                    <section>
-                        <h2>Take an online course</h2>
-                        <ul>
-                            <li class ="fragment"> Machine Learning By Andrew NG </li>
-                            <li class ="fragment"> Linear Algebra By Gilbert Strang </li>
-                            <li class ="fragment"> Statistics 110: Probability By Joe Blitzstein </li>
-                            <li class ="fragment"> Neural Networks for Machine Learning By Geoffrey Hinton </li>
-                        </ul>
-
-                    </section>
-
-                    <section>
-                        <h2> Implement algorithms and techniques </h2>
-                        <ul>
-                            <li class ="fragment"> Searching Algorithm (DFS, BFS)</li>
-                            <li class ="fragment"> Naive Bayes Algorithm </li>
-                            <li class ="fragment"> Linear and logistic regression </li>
-                            <li class ="fragment"> K-means Clustering </li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2> Start doing projects </h2>
-                    </section>
+                    <h2>Pandas</h2>
+                    <p> Python Library for Data manipulation and analysis</p>
+                    <ul>
+                    <li> Easy read and write from different sources/formats</li>
+                    <li> Easy to do common tasks like handling missing data</li>
+                    <li> Well-suited for tabular data with heterogeneously-typed columns</li>
+                    <li> Plays well with Numpy and other libraries</li>
+                    </ul>
                 </section>
-
+                <section data-background="#4d7e65">
+                    <h2>Series</h2>
+                    <ul>
+                    <li> One-dimensional array-like structure</li>
+                    <li> Capable of holding any data type</li>
+                    <li> Has indices</li>
+                    <li> Basically, a "smart" array</li>
+                    </ul>
+                </section>
+                <section data-background="#4d7e65">
+                    <h2>DataFrame</h2>
+                    <ul>
+                    <li> Two-dimensional tabular data structure</li>
+                    <li> Capable of holding any data type</li>
+                    <li> Has indices and columns</li>
+                    </ul>
+                    <p>Indices are rows, Columns are... columns</p>
+                </section>
                 <section>
-                    <section>
-                        <p> We are starting out too... </p>
-                        <img src="image/wanderer.jpg" height="450px"></img>
-                    </section>
-                    <section>
-                        <p>... more like this ...</p>
-                        <img src="image/spongebob.png" height="450px"></img>
-                    </section>
-                    <section>
-                        <h2>Keep Learning</h2>
-                        <img src="image/final.jpeg" height="450px"></img>
-                    </section>
+                    <h1>Exploring a Dataset: <font color="#f03">Titanic</font></h1>
+                    <p>kaggle.com/c/titanic</p>
                 </section>
+
 			</div>
 		</div>
 
